@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="/pages/login.css" type="text/css">
+    <script src="https://kit.fontawesome.com/9ec916ea16.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <img src="/pages/main icon.jpg" alt="logo">
+        <nav class="nav_links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/info">Vaccination Info</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <% if(!currentUser) { %>
+                <a href="/login">Login</a>
+                <!-- <button>Contact us</button> -->
+                <% } else{ %>
+                    <a href="/logout">Logout</a>
+                    <% } %>
+        </div>
+
+    </header>
+    <% if(success && success.length) {%>
+        <span class="flash">
+            <%=success %>
+        </span>
+        <% } %>
+            <% if(errors && errors.length) {%>
+                <span class="flash">
+                    <%=errors %>
+                </span>
+                <% } %>
+                    <div class="loginbox">
+                        <img src="/pages/user.jpg" alt="user">
+                        <h1>Login Here</h1>
+                        <form action="/login" method="POST">
+                            <div class="info">
+                                <i class="fas fa-user"></i>
+                                <input type="text" name="username" id="username" placeholder="Enter Username"><br>
+                                <i class="fas fa-lock"></i>
+                                <input type="password" name="password" id="password" placeholder="Enter Password">
+                            </div>
+                            <div class="loginbottom">
+                                <button type="submit">Login</button>
+                            </div>
+                            <div class="end">
+                                <a href="sign-up">Don't have an account?</a>
+                            </div>
+                        </form>
+                    </div>
+</body>
+
+</html>

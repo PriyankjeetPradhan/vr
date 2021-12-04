@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+
+    <link rel="stylesheet" href="/pages/sign-up.css" type="text/css">
+    <script src="https://kit.fontawesome.com/9ec916ea16.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <img src="/pages/main icon.jpg" alt="logo">
+        <nav class="nav_links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/info">Vaccination Info</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <% if(!currentUser) { %>
+                <a href="/login">Login</a>
+                <!-- <button>Contact us</button> -->
+                <% } else{ %>
+                    <a href="/logout">Logout</a>
+                    <% } %>
+        </div>
+
+    </header>
+    <% if(success && success.length) {%>
+        <span class="flash">
+            <%=success %>
+        </span>
+        <% } %>
+            <% if(errors && errors.length) {%>
+                <span class="flash">
+                    <%=errors %>
+                </span>
+                <% } %>
+                    <div class="bg-area">
+                        <div class="front-content">
+                            <h1>Welcome !!!</h1><br>
+                            <p>
+                                Let's get start with our project by registering yourself. <br>
+                                You can use your official istitute mail ID's to register and remember <br>
+                                your password for next time you vist and view your information.
+                            </p>
+                        </div>
+                        <div class="signup-area">
+                            <h2>Create Account</h2>
+                            <div class="logos">
+                                <i class="fab fa-facebook"></i>
+
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <p>or use your email account</p>
+                            <form action="/sign-up" method="POST">
+                                <i class="fas fa-user"></i>
+                                <input type="text" name="username" id="username" placeholder="Username" required><br>
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="Email" required><br>
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" minlength="8"
+                                    placeholder="Password" required><br>
+                                <div class="signup">
+                                    <button type="submit">Sign-up</button>
+                                </div>
+                            </form>
+
+                            <div class="end">
+                                <a href="login">Already have an account ?</a>
+                            </div>
+                        </div>
+                    </div>
+</body>
+
+</html>

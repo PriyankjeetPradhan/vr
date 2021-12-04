@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/pages/about.css">
+    <script src="https://kit.fontawesome.com/9ec916ea16.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <img src="/pages/main icon.jpg" alt="logo">
+        <nav class="nav_links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/info">Vaccination Info</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <% if(!currentUser) { %>
+                <a href="/login">Login</a>
+                <!-- <button>Contact us</button> -->
+                <% } else{ %>
+                    <a href="/logout">Logout</a>
+                    <% } %>
+        </div>
+    </header>
+
+    <% if(success && success.length) {%>
+        <span class="flash">
+            <%=success %>
+        </span>
+        <% } %>
+            <% if(errors && errors.length) {%>
+                <span class="flash">
+                    <%=errors %>
+                </span>
+                <% } %>
+
+                    <div class="main">
+                        <h1>Vaccination Record</h1>
+                        <p>
+                            Hello Everyone, I hope you all are safe in this pandemic and egarly waiting for the
+                            reopening of our college. But before that, all of us should be full vaccinated and here we
+                            come up with our webapp to help you keep tracking regarding your vaccination information.
+                            <br>
+                            Our app will help you to fill your vaccination details and save it so that you can have all
+                            your information regarding vaccination at one place. You will also be provided with some
+                            useful stuffs, so you can update and delete your information as per your concern. <br>
+                            So let's start with us and enjoy.
+                        </p>
+
+                        <div class="sign-up">
+                            <p>
+                                <% if(!currentUser) { %>
+                                    Getting started with us - <a href="/sign-up">Sign-up</a>
+                                    <% }%>
+                            </p>
+                        </div>
+                    </div>
+</body>
+
+</html>

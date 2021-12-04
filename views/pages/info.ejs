@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <link rel="stylesheet" href="/pages/info.css">
+    <script src="https://kit.fontawesome.com/9ec916ea16.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <img src="/pages/main icon.jpg" alt="logo">
+        <nav class="nav_links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/info">Vaccination Info</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <% if(!currentUser) { %>
+                <a href="/login">Login</a>
+                <!-- <button>Contact us</button> -->
+                <% } else{ %>
+                    <a href="/logout">Logout</a>
+                    <% } %>
+        </div>
+    </header>
+    <% if(success && success.length) {%>
+        <span class="flash">
+            <%=success %>
+        </span>
+        <% } %>
+            <% if(errors && errors.length) {%>
+                <span class="flash">
+                    <%=errors %>
+                </span>
+                <% } %>
+                    <div class="main">
+                        <ul>
+                            <% if(!user.userinfo) { %>
+                                <li><a href="/info/new">New user</a></li>
+                                <p>New registered users should provide the information to view or update the vaccination
+                                    details.
+                                    Tap the above link to provide the information.
+                                </p>
+                                <% }else{ %>
+                                    <li><a href="/info/<%=user.userinfo._id%>"> View your info</a></li>
+                                    <p>
+                                        By clicking the above link you can view, update and delete your last saved
+                                        information.
+                                    </p>
+                                    <% } %>
+                        </ul>
+                    </div>
+</body>
+
+</html>

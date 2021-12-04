@@ -1,0 +1,215 @@
+
+/* ------------------------------universal additives --------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+} 
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+body {
+  background: url(maxresdefault.jpg) no-repeat;
+  background-size: cover;
+  color: whitesmoke
+}
+li,a,button{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* -------------------------Nav bar and its effects------------------------------ */
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+img{
+  border: 2px solid snow;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.nav_links li{
+  display: inline-block;
+  padding: 0 30px;
+}
+.nav_links li a{
+  font-size: 17px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  padding: 5px 10px;
+  border-bottom: none;
+  color:rgb(182, 174, 174);
+
+}
+.nav_links li a:after{
+  content: "";
+  position: absolute;
+  background-color: snow;
+  height: 3px;
+  width:0;
+  left: 0;
+  bottom: -7px;
+  transition: 0.3s;
+}
+.nav_links li a:hover{
+  color: whitesmoke;
+}
+.nav_links li a:hover:after{
+  width: 100%;
+}
+
+.login a{
+  color:rgb(179, 177, 177);
+  font-size: 17px;
+  border-radius: 20px;
+  border: 2px solid whitesmoke ;
+  padding: 4px 10px;
+  background-color: rgba(255, 253, 253, 0.158);
+  transition: background-color  ease 0.3s ;
+}
+.login a:hover{
+  color: whitesmoke;
+  background-color: rgba(255, 250, 250, 0.411);
+}
+
+
+/* ------------------------Middle Background and content---------------------------- */
+.bg-area{
+  margin: 3% 12%;
+  display: flex;
+}
+.front-content{
+  padding: 3% 2.5%;
+  width: 60%;
+  border-radius: 0.5em;
+}
+h1{
+  font-size: 3em;
+}
+
+/* --------------------------------Sign-in part----------------------------------- */
+
+.signup-area{
+  width: 35%;
+  padding: 4% ;
+  color: whitesmoke;
+  text-align: center;
+  border-radius: 5%;
+  border: 1px solid rgba(255, 255, 255, 0.877);
+  background-color: rgba(245, 245, 245, 0.096);
+}
+
+h2{
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid rgb(241, 241, 241);
+  display: inline-block;
+}
+input{
+  font-size: 15px;
+  margin: 10px ;
+  padding: 5px;
+  width: 65%;
+  color: snow;
+  border: none;
+  text-decoration: none;
+  background: none;
+  outline: none;
+  border-bottom: 2px solid rgba(245, 245, 245, 0.74);
+}
+.end{
+  margin-left:18%;
+  font-size: 15px;
+  text-align: left;
+  margin-top: 15px;
+}
+.logos{
+  margin-left: 25%;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  padding-bottom: 10px;
+}
+.logos i{
+  border: 2px solid rgb(179, 177, 177);
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.signup-area p {
+  padding-bottom: 10px;
+}
+.signup{
+  margin: 3%;
+}
+.signup button{
+  font-size: 18px;
+  padding: 7px 15px;
+  border-radius: 20px;
+  border: 2px solid whitesmoke;
+  background-color: rgba(255, 253, 253, 0.158);
+  transition: background-color  ease 0.3s ;
+}
+.signup button:hover{
+  background-color: rgba(255, 250, 250, 0.411);
+}
+
+.flash{
+  display:flex;
+  justify-content: center;
+  /* border: 2px solid white; */
+  margin: 0% 72% 0% 12%;
+  padding: 8px 10px;
+  border-radius: 20px;
+}

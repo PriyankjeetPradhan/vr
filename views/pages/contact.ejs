@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="/pages/contact.css">
+    <script src="https://kit.fontawesome.com/9ec916ea16.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <img src="/pages/main icon.jpg" alt="logo">
+        <nav class="nav_links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/info">Vaccination Info</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <% if(!currentUser) { %>
+                <a href="/login">Login</a>
+                <!-- <button>Contact us</button> -->
+                <% } else{ %>
+                    <a href="/logout">Logout</a>
+                    <% } %>
+        </div>
+    </header>
+
+    <div class="main">
+        <p>
+        <ul>
+            <li>Developer name : Priyankjeet Pradhan</li><br>
+
+            <li>
+                Roll No. : 20234
+            </li><br>
+
+            <li>
+                Branch : ECE (Electronic and Communication Engineering)
+            </li><br>
+            <li>
+                Subject: Practicum III (Project)
+            </li><br>
+            <li>
+                Contact Details : <br>
+                <div class="contact">
+                    <p>Mobile No. : 9179724621 <br>
+                        E-mail : 20234@gmail.com</p>
+                </div>
+            </li>
+        </ul>
+        </p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show</title>
+    <link rel="stylesheet" href="/pages/show.css">
+    <script src="https://kit.fontawesome.com/9ec916ea16.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <img src="/pages/main icon.jpg" alt="logo">
+        <nav class="nav_links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/info">Vaccination Info</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <% if(!currentUser) { %>
+                <a href="/login">Login</a>
+                <!-- <button>Contact us</button> -->
+                <% } else{ %>
+                    <a href="/logout">Logout</a>
+                    <% } %>
+        </div>
+
+    </header>
+    <% if(success && success.length) {%>
+        <span class="flash">
+            <%=success %>
+        </span>
+        <% } %>
+            <% if(errors && errors.length) {%>
+                <span class="flash">
+                    <%=errors %>
+                </span>
+                <% } %>
+                    <div class="infobox">
+                        <h1>Vaccination Information</h1>
+                        <div class="personaldetails">
+                            <ul>
+                                <li> Name : <%= user.fname %>
+                                </li><br>
+                                <li> Age : <%=user.age %>
+                                </li><br>
+                                <li> Gender : <%= user.gender %>
+                                </li><br>
+                                <li>Mobile : <%= user.mobile %>
+                                </li> <br>
+                            </ul>
+                        </div>
+                        <div class="dose">
+                            <h2>First dose</h2>
+                            <div class="firstdose">
+                                <ul>
+                                    <li> Taken the first dose: <%=user.fdose %>
+                                    </li> <br>
+                                    <li> Date of vaccination : <%= user.fdate %>
+                                    </li> <br>
+                                    <li> Name of the vaccine : <%= user.vaccine %>
+                                    </li> <br>
+                                    <li> Found positive after taking the first dose : <%= user.fpositive %>
+                                    </li> <br>
+                                    <li> Symptoms : <%= user.fsymp %>
+                                    </li> <br>
+                                </ul>
+                            </div>
+                            <h2>Second Dose</h2>
+                            <div class="seconddose">
+                                <ul>
+                                    <li>Taken the second dose: <%=user.sdose %>
+                                    </li> <br>
+                                    <li> Date of vaccination : <%= user.sdate %>
+                                    </li><br>
+                                    <li> Name of the vaccine : <%= user.vaccine %>
+                                    </li> <br>
+                                    <li> Found positive after taking the second dose : <%= user.spositive %>
+                                    </li> <br>
+                                    <li> Symptoms : <%= user.ssymp %>
+                                    </li><br>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <a href="/info/<%= user._id%>/update">Update info</a>
+                            <form action="/info/<%=user._id%>?_method=DELETE" method="POST">
+                                <button>DELETE</button>
+                            </form>
+                        </div>
+                    </div>
+
+</body>
+
+</html>

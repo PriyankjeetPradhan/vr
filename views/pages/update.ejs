@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="/pages/update.css">
+</head>
+
+<body>
+    <header>
+        <img src="/pages/main icon.jpg" alt="logo">
+        <nav class="nav_links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/info">Vaccination Info</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <% if(!currentUser) { %>
+                <a href="/login">Login</a>
+                <!-- <button>Contact us</button> -->
+                <% } else{ %>
+                    <a href="/logout">Logout</a>
+                    <% } %>
+        </div>
+
+
+    </header>
+    <% if(success && success.length) {%>
+        <span class="flash">
+            <%=success %>
+        </span>
+        <% } %>
+            <% if(errors && errors.length) {%>
+                <span class="flash">
+                    <%=errors %>
+                </span>
+                <% } %>
+                    <div class="infobox">
+                        <h1> Update the Information</h1>
+                        <form action="/info/<%=user._id%>?_method=PUT" method="POST">
+                            <div class="personaldetails">
+                                <ul>
+                                    <li> <label for="fname">Name :</label>
+                                        <input type="text" name="fname" id="fname" placeholder="Full Name"
+                                            value="<%=user.fname %>" required>
+                                    </li><br>
+                                    <li> <label for="age">Age :</label>
+                                        <input type="Number" name="age" id="age" placeholder="Age"
+                                            value="<%=user.age %>" required>
+                                    </li><br>
+                                    <li>
+
+                                        <label for="">Gender :</label>
+                                        <input type="radio" id="male" name="gender" value="male" <%=user.gender==='male'
+                                            ? 'selected: true' : '' %> >
+                                        <label for="male">Male </label>
+                                        <input type="radio" id="female" name="gender" value="female"
+                                            <%=user.gender==='female' ? 'selected: true' : '' %>>
+                                        <label for="female">Female </label>
+                                    </li><br>
+                                    <li>
+                                        <label for="mobile">Mobile No. :</label>
+                                        <input type="text" name="mobile" id="mobile" max="10" min="10"
+                                            placeholder="Mobile No." value="<%=user.mobile %>">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dose">
+                                <h2> First Dose </h2>
+                                <div class="firstdose">
+                                    <ul>
+                                        <li> Have You taken the first dose? :
+                                            <input type="radio" name="fdose" id="yes" value="yes">
+                                            <label for="yes">Yes</label>
+                                            <input type="radio" name="fdose" id="no" value="no">
+                                            <label for="no">No</label>
+                                        </li><br>
+                                        <li>
+                                            <label for="fdate">Date of first dose(if taken)? :</label>
+                                            <input type="date" name="fdate" id="fdate" value="<%=user.fdate %>">
+                                        </li><br>
+                                        <li>
+                                            <label for="vaccine">Name of vaccine :</label>
+                                            <input type="text" name="vaccine" id="vaccine" placeholder="Vaccine"
+                                                value="<%=user.vaccine %>">
+                                        </li><br>
+                                        <li>
+                                            Found positive after taking the first dose? :
+                                            <input type="radio" name="fpositive" id="yes" value="yes">
+                                            <label for="yes">Yes</label>
+                                            <input type="radio" name="fpositive" id="no" value="no">
+                                            <label for="no">No</label>
+                                        </li><br>
+                                        <li>
+                                            <label for="fsymp">Symptoms(of first dose) :</label>
+                                            <input type="text" name="fsymp" id="fsymp" placeholder="Symptoms"
+                                                value="<%=user.fsymp%>">
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h2>Second Dose</h2>
+                                <div class="seconddose">
+                                    <ul>
+                                        <li>Have You taken the second dose? :
+                                            <input type="radio" name="sdose" id="yes" value="yes">
+                                            <label for="yes">Yes</label>
+                                            <input type="radio" name="sdose" id="no" value="no">
+                                            <label for="no">No</label>
+                                        </li> <br>
+                                        <li><label for="sdate">Date of second dose(if taken)? :</label>
+                                            <input type="date" name="sdate" id="sdate" value="<%=user.sdate %>">
+                                        </li><br>
+
+                                        <li>Found positive after taking the second dose? :
+                                            <input type="radio" name="spositive" id="yes" value="yes">
+                                            <label for="yes">Yes</label>
+                                            <input type="radio" name="spositive" id="no" value="no">
+                                            <label for="no">No</label>
+                                        </li> <br>
+                                        <li>
+                                            <label for="ssymp">Symptoms(of second dose) :</label>
+                                            <input type="text" name="ssymp" id="ssymp" placeholder="Symptoms"
+                                                value="<%=user.ssymp %>">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="submit">
+                                <p>
+                                    <a href=" /info/<%=user._id%>"> Cancel</a>
+                                    <button>Save info</button>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+
+</body>
+
+</html>
