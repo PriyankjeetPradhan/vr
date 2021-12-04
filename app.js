@@ -169,13 +169,13 @@ app.delete('/info/:id',isLoggedIn, async (req, res) => {
     const { id } = req.params;
     const user = await Userinfo.findByIdAndDelete(id);
     req.flash('success', 'Information Deleted !!');
-    res.redirect('/about');
+    res.redirect('/');
 })
 
 app.get('/logout', (req, res) => {
     req.logOut();
     req.flash('success', 'Goodbye!!');
-    res.redirect('/about');
+    res.redirect('/');
 })
 app.get('/contact', async (req, res) => {
     res.render('pages/contact');
