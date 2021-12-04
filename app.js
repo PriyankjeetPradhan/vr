@@ -138,7 +138,7 @@ app.post('/new',isLoggedIn, async (req, res) => {
     res.redirect(`/info/${user._id}` );
 })
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
     res.render('pages/about');
 })
 
